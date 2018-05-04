@@ -13,6 +13,32 @@
   </head>
 
   <body>
+          <header class="header indigo z-depth-1">
+                <img src="https://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg" alt=""  class="circle responsive-img">
+
+                <!-- <h1>Parminder Klair</h1>
+
+                <p>senior web developer</p>-->
+
+                <nav class="indigo">
+                    <div class="nav-wrapper">
+                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                        <ul class="hide-on-med-and-down">
+                            <li><a href="/">about me</a></li>
+                            <li><a href="/resume">resume</a></li>
+                            <li><a href="/contact">contact</a></li>
+                            <li><a href="/resources">resources</a></li>
+                        </ul>
+                        <ul class="side-nav" id="mobile-demo" style="left: -250px;">
+                            <li><a href="/">about me</a></li>
+                            <li><a href="/resume">resume</a></li>
+                            <li><a href="/contact">contact</a></li>
+                            <li><a href="/resources">resources</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+            </header>
           <div class="container">
                   <%= yield %>
           </div>
