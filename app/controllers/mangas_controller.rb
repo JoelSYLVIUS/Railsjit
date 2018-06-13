@@ -12,7 +12,7 @@ class MangasController < ApplicationController
 
 
   def new
-
+    @manga = Manga.new
   end
 
 
@@ -21,7 +21,7 @@ class MangasController < ApplicationController
 
 
   def create
-
+    @manga = Manga.new(manga_params)
 
 
       if @manga.save
