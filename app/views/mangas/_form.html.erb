@@ -1,0 +1,23 @@
+
+<%= simple_form_for @manga do |form| %>
+
+        <div class="row">
+                <div class=" input-field col l6">
+                        <%= form.input :title, label: 'Titre', class: "fom-control"  %>
+                </div>
+        </div>
+        <div class="row">
+                <div class="input-field col l6">
+                        <%= form.input :description, label: 'Description', class: "fom-control"  %>
+                </div>
+        </div>
+        <div class="row">
+                <div class=" input-field col l6">
+                        <%= form.input :thumbnail, label: 'Image', class: "fom-control"  %>
+                </div>
+        </div>
+
+        <div class="actions">
+                <%= form.submit 'enregistrer' %>
+        </div>
+<% end %>

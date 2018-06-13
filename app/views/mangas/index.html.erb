@@ -1,0 +1,23 @@
+<h1>Mangas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mangas.each do |manga| %>
+      <tr>
+        <td><%= link_to 'Afficher', manga %></td>
+        <td><%= link_to 'Editer', edit_manga_path(manga) %></td>
+        <td><%= link_to 'Supprimer', manga, method: :delete, data: { confirm: 'Etes-vous sûr de vouloir supprimer ce manga ?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nouveau Manga', new_manga_path %>
