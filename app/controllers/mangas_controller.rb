@@ -12,7 +12,7 @@ class MangasController < ApplicationController
 
 
   def new
-
+    
   end
 
 
