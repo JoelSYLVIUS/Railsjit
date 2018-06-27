@@ -34,6 +34,7 @@
                             <li><a href="/resume">resume</a></li>
                             <li><a href="/contact">contact</a></li>
                             <li><a href="/resources">resources</a></li>
+                            <li><%= link_to "Mangas", mangas_path %></li>
                                 <li class="right">
                                         <% if user_signed_in? %>
                                                 <%= link_to 'Déconnexion', destroy_user_session_path %>
@@ -48,6 +49,7 @@
                             <li><a href="/resume">resume</a></li>
                             <li><a href="/contact">contact</a></li>
                             <li><a href="/resources">resources</a></li>
+                            <li><%= link_to "Mangas", mangas_path %></li>
                             <li>
                                     <% if user_signed_in? %>
                                             <%= link_to 'Déconnexion', destroy_user_session_path, method: :delete %>
@@ -62,8 +64,8 @@
             </header>
           <div class="container">
                   <%= yield %>
-                  <%= debug user_signed_in? %>
-                  <%= debug session.to_hash %>
+                  <!-- <%= debug user_signed_in? %>
+                  <%= debug session.to_hash %> -->
           </div>
   </body>
 </html>

@@ -42,6 +42,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise', '~> 4.2'
 gem 'devise-i18n'
 gem 'simple_form'
+gem 'cancancan'
+gem 'rolify'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
