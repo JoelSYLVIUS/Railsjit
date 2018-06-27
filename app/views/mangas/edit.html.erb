@@ -1,6 +1,6 @@
-<h1>Modifier un Manga</h1>
-
+<h1 class="center">Modifier un Manga</h1>
+<% if can? :update, mangas %>
 <%= render 'form', manga: @manga %>
 
-<%= link_to 'Afficher', @manga %> |
-<%= link_to 'Retour', mangas_path %>
+<%= link_to 'Afficher', @manga, class: "btn blue waves-effect waves-light btn-small" %> |
+<%= link_to 'Retour', mangas_path, class: "btn red waves-effect waves-light btn-small" %>

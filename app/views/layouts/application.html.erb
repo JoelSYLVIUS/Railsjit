@@ -13,6 +13,12 @@
   </head>
 
   <body>
+          <div style="width:20%; position:absolute; top:10%; left:75%;min-height:30px;">
+                <p class="notice light-green accent-4 center white-text hoverable " style="border-radius:20px"><%= notice %></p>
+          </div>
+          <div style="width:20%; position:absolute; top:10%; left:75%;min-height:30px;">
+                  <p class="alert red accent-4 center white-text hoverable " style="border-radius:20px"><%= alert %></p>
+          </div>
           <header class="header indigo z-depth-1">
                 <!-- <img src="https://www.jqueryscript.net/images/Simplest-Responsive-jQuery-Image-Lightbox-Plugin-simple-lightbox.jpg" alt=""  class="circle responsive-img"> -->
 
@@ -28,14 +34,29 @@
                             <li><a href="/resume">resume</a></li>
                             <li><a href="/contact">contact</a></li>
                             <li><a href="/resources">resources</a></li>
-                            <li class="right"><a href="/connexion">connexion</a></li>
+                            <li><%= link_to "Mangas", mangas_path %></li>
+                                <li class="right">
+                                        <% if user_signed_in? %>
+                                                <%= link_to 'Déconnexion', destroy_user_session_path %>
+                                        <% else %>
+                                                <%= link_to 'Connexion', new_user_session_path %>
+                                        <% end %>
+                                </li>
                         </ul>
+
                         <ul class="side-nav" id="mobile-demo" style="left: -250px;">
                             <li><a href="/">about me</a></li>
                             <li><a href="/resume">resume</a></li>
                             <li><a href="/contact">contact</a></li>
                             <li><a href="/resources">resources</a></li>
-                            <li><a href="/connexion">connexion</a></li>
+                            <li><%= link_to "Mangas", mangas_path %></li>
+                            <li>
+                                    <% if user_signed_in? %>
+                                            <%= link_to 'Déconnexion', destroy_user_session_path, method: :delete %>
+                                    <% else %>
+                                            <%= link_to 'Connexion', new_user_session_path %>
+                                    <% end %>
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -43,6 +64,8 @@
             </header>
           <div class="container">
                   <%= yield %>
+                  <!-- <%= debug user_signed_in? %>
+                  <%= debug session.to_hash %> -->
           </div>
   </body>
 </html>
