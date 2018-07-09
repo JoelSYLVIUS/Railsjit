@@ -14,9 +14,8 @@
       <tr>
               <td><%= manga.title %></td>
               <td><%= manga.description %></td>
-        <td><%= link_to 'Afficher', manga, class: "btn blue waves-effect waves-light btn-small" %></td>
-        <td><%= link_to 'Editer', edit_manga_path(manga), class: "btn waves-effect waves-light btn-small" %></td>
-        <td><%= link_to 'Supprimer', manga, method: :delete, data: { confirm: 'Etes-vous sûr de vouloir supprimer ce manga ?' }, class: "btn red waves-effect waves-light btn-small" %></td>
+        <td><%= link_to 'Afficher', manga, class: "btn blue waves-effect waves-light btn-small" %> | <%= link_to 'Editer', edit_manga_path(manga), class: "btn waves-effect waves-light btn-small" %> | <%= link_to 'Supprimer', manga, method: :delete, data: { confirm: 'Etes-vous sûr de vouloir supprimer ce manga ?' }, class: "btn red waves-effect waves-light btn-small" %></td>
+        
       </tr>
     <% end %>
   </tbody>

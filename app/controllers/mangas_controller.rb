@@ -1,7 +1,7 @@
 class MangasController < ApplicationController
   before_action :set_manga, only: [:show, :edit, :update, :destroy]
 
-
+#autorize_resource
   def index
     @mangas = Manga.all
   end
