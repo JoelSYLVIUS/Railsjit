@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titre:</strong>
+  <%= @genre.titre %>
+</p>
+
+<%= link_to 'Edit', edit_genre_path(@genre) %> |
+<%= link_to 'Retour', genres_path, class: "btn red waves-effect waves-light btn-small" %>

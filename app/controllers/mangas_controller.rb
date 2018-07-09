@@ -1,7 +1,7 @@
 class MangasController < ApplicationController
   before_action :set_manga, only: [:show, :edit, :update, :destroy]
 
-
+#autorize_resource
   def index
     @mangas = Manga.all
   end
@@ -21,7 +21,7 @@ class MangasController < ApplicationController
 
 
   def create
-    @manga = Manga.new(manga_params)
+    @manga = Manga.new(params.require(:manga).permit(:title, :description, :thumbnail))
 
 
       if @manga.save
@@ -30,7 +30,7 @@ class MangasController < ApplicationController
         render :new
       end
     end
-  end
+
 
 
   def update
@@ -59,3 +59,4 @@ class MangasController < ApplicationController
     def manga_params
       params.fetch(:manga, {})
     end
+end

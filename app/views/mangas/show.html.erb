@@ -1,4 +1,7 @@
+<h1 class="center">Afficher un manga</h1>
 
+<p>Nom : <%= @manga.title %></p>
+<p>Nom : <%= @manga.description %></p>
 
-<%= link_to 'Editer le manga', edit_manga_path(@manga) %> |
-<%= link_to 'Retour', mangas_path %>
+<%= link_to 'Editer le manga', edit_manga_path(@manga), class: "btn waves-effect waves-light btn-small" %> |
+<%= link_to 'Retour', mangas_path, class: "btn red waves-effect waves-light btn-small" %>
