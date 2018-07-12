@@ -66,6 +66,13 @@
                   <%= yield %>
                   <!-- <%= debug user_signed_in? %>
                   <%= debug session.to_hash %> -->
+
+            <% flash.each do |name, msg| %>
+              <div class="alert alert-<% name %>">
+                <a class="close" data-dismiss="alert">x</a>
+                <%= content_tag :div, msg,  id: "flash_#{name}" %>
+              </div>
+            <% end %>
           </div>
   </body>
 </html>

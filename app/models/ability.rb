@@ -7,7 +7,7 @@ class Ability
           if user.has role?(:admin)
                   can :manage, Mangas
           else
-                  can : read, Mangas
+                  can :read, Mangas
           end
     # Define abilities for the passed in user here. For example:
     #

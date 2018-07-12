@@ -25,27 +25,31 @@ class MangasController < ApplicationController
 
 
       if @manga.save
-        redirect_to @manga, notice: 'Le Manga a été créer avec succès.'
+        flash[:success] = "Le Manga #{@manga.title} a été créer avec succès."
+        redirect_to @manga
       else
         render :new
       end
     end
 
 
+  #def update
 
-  def update
-      if @manga.update(manga_params)
-        redirect_to @manga, notice: 'Le Manga a été modifier avec succès.'
-      else
-        render :edit
-      end
-    end
+   #   if @manga.update(manga_params)
+   #     flash[:success] = "Le Manga #{@manga.title} a été modifier avec succès."
+   #     redirect_to @manga
+   #   else
+   #     render :edit
+   #   end
+  #end
+
 
 
 
   def destroy
     @manga.destroy
-      redirect_to mangas_url, notice: 'Le Manga a été supprimer avec succès.'
+    flash[:success] = "Le Manga #{@manga.title} a été supprimer avec succès."
+    redirect_to mangas_url
     end
 
 
