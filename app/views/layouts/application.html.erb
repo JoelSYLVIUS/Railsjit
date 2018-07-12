@@ -30,11 +30,12 @@
                     <div class="nav-wrapper">
                         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
                         <ul class="hide-on-med-and-down">
-                            <li><a href="/">about me</a></li>
-                            <li><a href="/resume">resume</a></li>
-                            <li><a href="/contact">contact</a></li>
-                            <li><a href="/resources">resources</a></li>
-                            <li><%= link_to "Mangas", mangas_path %></li>
+                                <li><%= link_to "Mangas", mangas_path %></li>
+                                <li><a href="/">about me</a></li>
+                                <li><%= link_to"Genres", genres_path %></li>
+                                <li><%= link_to "Medias", media_path %></li>
+                                
+
                                 <li class="right">
                                         <% if user_signed_in? %>
                                                 <%= link_to 'Déconnexion', destroy_user_session_path %>

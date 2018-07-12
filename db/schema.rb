@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_27_132522) do
+ActiveRecord::Schema.define(version: 2018_07_12_104541) do
 
   create_table "genres", force: :cascade do |t|
     t.string "title"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2018_06_27_132522) do
     t.integer "iteration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
   create_table "media", force: :cascade do |t|
@@ -64,6 +65,7 @@ ActiveRecord::Schema.define(version: 2018_06_27_132522) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["pseudo"], name: "index_users_on_pseudo", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

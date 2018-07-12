@@ -14,7 +14,12 @@
                         </div>
                         <div class="row">
                                 <div class=" input-field col l6 offset-l3">
-                                        <%= form.input :thumbnail, label: 'Image', class: "fom-control"  %>
+                                        <%= form.input :image, as: :file, label: 'Image', class: "fom-control"  %>
+                                        <% if @manga.image_url %>
+                                        <p>
+                                                <%= image_tag @manga.image_url %>
+                                        </p>
+                                        <% end %>
                                 </div>
                         </div>
 

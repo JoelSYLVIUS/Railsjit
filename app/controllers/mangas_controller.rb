@@ -21,7 +21,7 @@ class MangasController < ApplicationController
 
 
   def create
-    @manga = Manga.new(params.require(:manga).permit(:title, :description, :thumbnail))
+    @manga = Manga.new(params.require(:manga).permit(:title, :description, :image))
 
 
       if @manga.save
@@ -57,6 +57,6 @@ class MangasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def manga_params
-      params.fetch(:manga, {})
+      params.require(:manga).permit(:title, :description, :image)
     end
 end
