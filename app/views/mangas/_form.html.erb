@@ -4,28 +4,22 @@
                 <div class="col l12 center">
                         <div class="row">
                                 <div class=" input-field col l6 offset-l3">
-                                        <%= form.input :title, placeholder: 'Titre', class: "input-field"  %>
+                                        <%= form.input :title, placeholder: 'Titre', class: "form-control"  %>
                                 </div>
                         </div>
                         <div class="row">
                                 <div class="input-field col l6 offset-l3">
-                                        <%= form.input :description, class: "input-field"  %>
+                                        <%= form.input :description, class: "form-control"  %>
                                 </div>
                         </div>
                         <div class="row">
                                 <div class=" input-field col l6 offset-l3">
-                                        <div class="row">
-                                                <%= form.association :genre,
-                                                 as: :select,
-                                                  :label => "Genres", :include_blank => false %>
-                                        </div>
+                                        <%= form.association :genre %>
                                 </div>
                         </div>
                         <div class="row">
                                 <div class=" input-field col l6 offset-l3">
-                                        <div class="row">
-                                                <%= form.association :support, as: :select  %>
-                                        </div>
+                                        <%= form.association :support %>
                                 </div>
                         </div>
 

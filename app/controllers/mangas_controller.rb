@@ -1,6 +1,6 @@
 class MangasController < ApplicationController
-  before_action :set_manga, only: [:show, :edit, :update, :destroy]
-authorize_resource
+  #before_action :set_manga, only: [:show, :edit, :update, :destroy]
+load_and_authorize_resource
 
   def index
     @mangas = Manga.all
@@ -34,11 +34,12 @@ authorize_resource
 
 
   def update
-      if @manga.update(manga_params)
-        redirect_to @manga, notice: 'Le Manga a été modifier avec succès.'
-      else
-        render :edit
-      end
+          @manga = Manga.find(params[:id])
+          if @manga.update(manga_params)
+                  redirect_to @manga
+          else
+                  render 'edit'
+          end
     end
 
 
