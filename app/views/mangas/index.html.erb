@@ -1,6 +1,6 @@
 <h1 class="center">Mangas</h1>
 
-<table>
+<table class="table striped centered responsive-table">
   <thead>
     <tr>
             <th>Titre</th>
@@ -13,15 +13,15 @@
   <tbody>
     <% @mangas.each do |manga| %>
       <tr>
-              <td><%= manga.title %></td>
-              <td><%= manga.description %></td>
+              <td><h5><strong><%= manga.title %></strong></h5></td>
+              <td class="truncate" style="max-width:200px;margin-top: 40px;"><%= manga.description %></td>
               <td><p><%= image_tag manga.image_url (:thumb) %></p></td>
-        <td><%= link_to 'Afficher', manga, class: "btn blue waves-effect waves-light btn-small" %> | <%= link_to 'Editer', edit_manga_path(manga), class: "btn waves-effect waves-light btn-small" %> |
+        <td><%= link_to 'Afficher', manga, class: "btn blue waves-effect waves-light btn-small hoverable" %> | <%= link_to 'Modifier', edit_manga_path(manga), class: "btn waves-effect waves-light btn-small hoverable" %> |
                  <%= link_to 'Supprimer',
                  manga,
                  :method => :delete,
                  :confirm => 'Etes-vous sûr de vouloir supprimer ce manga ?',
-                 class: "btn red waves-effect waves-light btn-small" %></td>
+                 class: "btn red waves-effect waves-light btn-small hoverable" %></td>
 
       </tr>
     <% end %>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'Nouveau Manga', new_manga_path, class: "btn yellow black-text waves-effect waves-light btn-small" %>
+<%= link_to 'Ajouter un nouveau Manga', new_manga_path, class: "btn yellow black-text waves-effect waves-light btn-small hoverable" %>

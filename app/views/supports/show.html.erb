@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <h2><strong>Titre du support:</strong></h2>
   <%= @support.title %>
 </p>
 
-<%= link_to 'Edit', edit_support_path(@support) %> |
-<%= link_to 'Back', supports_path %>
+<%= link_to 'Modifier', edit_support_path(@support), class: "btn waves-effect waves-light btn-small hoverable" %> |
+<%= link_to 'Retour', supports_path, class: "btn red waves-effect waves-light btn-small hoverable" %>

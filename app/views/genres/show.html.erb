@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <h2><strong>Title:</strong></h2>
   <%= @genre.title %>
 </p>
 
-<%= link_to 'Edit', edit_genre_path(@genre),  class: "btn waves-effect waves-light btn-small"%> |
-<%= link_to 'Retour', genres_path, class: "btn red waves-effect waves-light btn-small" %>
+<%= link_to 'Modifier', edit_genre_path(@genre),  class: "btn waves-effect waves-light btn-small hoverable"%> |
+<%= link_to 'Retour', genres_path, class: "btn red waves-effect waves-light btn-small hoverable" %>

@@ -4,5 +4,5 @@
 <p>Nom : <%= @manga.description %></p>
 <p><%= image_tag @manga.image_url %></p>
 
-<%= link_to 'Editer le manga', edit_manga_path(@manga), class: "btn waves-effect waves-light btn-small" %> |
-<%= link_to 'Retour', mangas_path, class: "btn red waves-effect waves-light btn-small" %>
+<%= link_to 'Modifier le manga', edit_manga_path(@manga), class: "btn waves-effect waves-light btn-small hoverable" %> |
+<%= link_to 'Retour', mangas_path, class: "btn red waves-effect waves-light btn-small hoverable" %>

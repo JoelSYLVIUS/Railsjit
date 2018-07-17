@@ -4,40 +4,44 @@
                 <div class="col l12 center">
                         <div class="row">
                                 <div class=" input-field col l6 offset-l3">
-                                        <%= form.input :title, label: 'Titre', class: "fom-control"  %>
+                                        <%= form.input :title, placeholder: 'Titre', class: "input-field"  %>
                                 </div>
                         </div>
                         <div class="row">
                                 <div class="input-field col l6 offset-l3">
-                                        <%= form.input :description, label: 'Description', class: "fom-control"  %>
+                                        <%= form.input :description, class: "input-field"  %>
                                 </div>
                         </div>
                         <div class="row">
                                 <div class=" input-field col l6 offset-l3">
-                                        <%= form.association :genre, class: "form-control" %>
+                                        <div class="row">
+                                                <%= form.association :genre,
+                                                 as: :select,
+                                                  :label => "Genres", :include_blank => false %>
+                                        </div>
                                 </div>
                         </div>
                         <div class="row">
                                 <div class=" input-field col l6 offset-l3">
-                                        <%= form.association :support, as: :select, class: "form-control" %>
+                                        <div class="row">
+                                                <%= form.association :support, as: :select  %>
+                                        </div>
                                 </div>
                         </div>
 
 
                         <div class="row">
                                 <div class=" input-field col l6 offset-l3">
-                                        <%= form.input :image, as: :file, label: 'Image', class: "fom-control"  %>
-
+                                        <%= form.input :image, as: :file, label: 'Image', class: "form-control"  %>
                                         <p>
                                                 <%= image_tag @manga.image_url %>
                                         </p>
-
                                 </div>
                         </div>
 
 
                         <div class="actions">
-                                <%= form.submit 'enregistrer', class: "btn green waves-effect waves-light btn-small" %>
+                                <%= form.submit 'enregistrer', class: "btn green waves-effect waves-light btn-small hoverable" %>
                         </div>
                 </div>
         </div>
