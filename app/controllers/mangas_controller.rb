@@ -1,7 +1,7 @@
 class MangasController < ApplicationController
   before_action :set_manga, only: [:show, :edit, :update, :destroy]
+authorize_resource
 
-#autorize_resource
   def index
     @mangas = Manga.all
   end
@@ -21,7 +21,7 @@ class MangasController < ApplicationController
 
 
   def create
-    @manga = Manga.new(params.require(:manga).permit(:title, :description, :image))
+    @manga = Manga.new(params.require(:manga).permit(:title, :description, :support_id, :image, :genre_id))
 
 
       if @manga.save
@@ -44,9 +44,10 @@ class MangasController < ApplicationController
 
 
   def destroy
-    @manga.destroy
+          @manga = Manga.find(params[:id])
+          @manga.destroy
       redirect_to mangas_url, notice: 'Le Manga a été supprimer avec succès.'
-    end
+   end
 
 
   private
@@ -57,6 +58,6 @@ class MangasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def manga_params
-      params.require(:manga).permit(:title, :description, :image)
+      params.require(:manga).permit(:title, :description, :support_id, :genre_id, :image )
     end
 end

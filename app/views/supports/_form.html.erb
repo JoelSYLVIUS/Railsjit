@@ -1,0 +1,16 @@
+
+<%= simple_form_for(@support) do |form| %>
+ 
+  <div class="row">
+          <div class="col l12 center">
+                  <div class="row">
+                          <div class=" input-field col l6 offset-l3">
+                                  <%= form.input :title, label: 'Titre', class: "fom-control"  %>
+                          </div>
+                  </div>
+                  <div class="actions">
+                          <%= form.submit 'enregistrer', class: "btn green waves-effect waves-light btn-small" %>
+                  </div>
+          </div>
+  </div>
+<% end %>

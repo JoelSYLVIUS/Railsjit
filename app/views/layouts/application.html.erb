@@ -30,15 +30,20 @@
                     <div class="nav-wrapper">
                         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
                         <ul class="hide-on-med-and-down">
+                                <li><a href="/">Accueil</a></li>
+                                <% if can? :manage, :all %>
                                 <li><%= link_to "Mangas", mangas_path %></li>
-                                <li><a href="/">about me</a></li>
+
                                 <li><%= link_to"Genres", genres_path %></li>
                                 <li><%= link_to "Medias", media_path %></li>
-                                
+                                <% end %>
+                                <li><a href="/home/about">about me</a></li>
+                                <li><a href="/home/profil">Profil</a></li>
+
 
                                 <li class="right">
                                         <% if user_signed_in? %>
-                                                <%= link_to 'Déconnexion', destroy_user_session_path %>
+                                                <%= link_to "Déconnexion", destroy_user_session_path, :method => :delete %>
                                         <% else %>
                                                 <%= link_to 'Connexion', new_user_session_path %>
                                         <% end %>

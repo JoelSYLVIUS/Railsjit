@@ -19,16 +19,16 @@ class MediaController < ApplicationController
   def edit
   end
 
+
   def create
     @medium = Medium.new(medium_params)
 
     respond_to do |format|
       if @medium.save
-        format.html { redirect_to @medium, notice: 'Medium was successfully created.' }
+        redirect_to @medium, notice: 'Medium was successfully created.'
 
       else
-        format.html { render :new }
-
+        render :new
       end
     end
   end
@@ -37,21 +37,18 @@ class MediaController < ApplicationController
   def update
 
       if @medium.update(medium_params)
-        format.html { redirect_to @medium, notice: 'Medium was successfully updated.' }
-
+        redirect_to @medium, notice: 'Medium was successfully updated.'
       else
-        format.html { render :edit }
-
+              render :edit
       end
-
+    end
   end
 
 
   def destroy
     @medium.destroy
-      format.html { redirect_to media_url, notice: 'Medium was successfully destroyed.' }
-
-    
+       redirect_to media_url, notice: 'Medium was successfully destroyed.' 
+    end
   end
 
   private
@@ -62,6 +59,6 @@ class MediaController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def medium_params
-      params.require(:medium).permit(:titre)
+      params.require(:medium).permit(:title)
     end
 end

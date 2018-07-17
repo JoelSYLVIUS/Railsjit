@@ -12,4 +12,10 @@ class User < ApplicationRecord
 
          mount_uploader :image, AvatarUploader
 
+         after_create :default_role
+
+           private
+           def default_role
+             self.roles << Role.where(:name => 'User').first
+           end
 end

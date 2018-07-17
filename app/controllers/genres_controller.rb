@@ -1,6 +1,6 @@
 class GenresController < ApplicationController
-  before_action :set_genre, only: [:show, :edit, :update, :destroy]
-
+  #before_action :set_genre, only: [:show, :edit, :update, :destroy]
+ load_and_authorize_resource
 
   def index
     @genres = Genre.all
@@ -21,30 +21,28 @@ class GenresController < ApplicationController
     @genre = Genre.new(genre_params)
 
       if @genre.save
-        format.html { redirect_to @genre, notice: 'Genre was successfully created.' }
+         redirect_to @genre, notice: 'Genre was successfully created.'
 
       else
-        format.html { render :new }
+         render :new
 
       end
-    end
   end
 
   def update
       if @genre.update(genre_params)
-        format.html { redirect_to @genre, notice: 'Genre was successfully updated.' }
+              redirect_to @genre, notice: 'Genre was successfully updated.'
 
       else
-        format.html { render :edit }
-
+              render :edit
       end
-    end
+  end
 
 
   def destroy
-    @genre.destroy
-      format.html { redirect_to genres_url, notice: 'Genre was successfully destroyed.' }
-
+          @genre = Genre.find(params[:id])
+          @genre.destroy
+      redirect_to genres_url, notice: 'Le genre a été supprimer avec succès.'
     end
 
 
@@ -56,5 +54,6 @@ class GenresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def genre_params
-      params.require(:genre).permit(:titre)
+      params.require(:genre).permit(:title)
     end
+end

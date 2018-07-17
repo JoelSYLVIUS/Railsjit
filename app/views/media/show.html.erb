@@ -1,8 +1,9 @@
+<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Titre:</strong>
-  <%= @medium.titre %>
+  <strong>Title:</strong>
+  <%= @medium.title %>
 </p>
 
-<%= link_to 'Editer le manga', edit_medium_path(@medium), class: "btn waves-effect waves-light btn-small" %> 
-<%= link_to 'Retour', media_path, class: "btn red waves-effect waves-light btn-small" %>
+<%= link_to 'Edit', edit_medium_path(@medium) %> |
+<%= link_to 'Back', media_path %>
